@@ -1,0 +1,300 @@
+2026-05-28 19:23:06,512 - DEBUG - [<module>] - Retrieving Windows environment variables...
+2026-05-28 19:23:06,513 - INFO - [<module>] - Environment variables verified successfully.
+2026-05-28 19:23:06,513 - DEBUG - [<module>] - Initializing Todoist and Hugging Face API clients...
+2026-05-28 19:23:06,928 - INFO - [main] - ========= STARTING PANTRY PIPELINE IN DEBUG MODE =========
+2026-05-28 19:23:06,928 - DEBUG - [init_db] - Opening connection to local SQLite database 'pantry.db'...
+2026-05-28 19:23:06,929 - DEBUG - [init_db] - Ensuring 'processed_videos' table exists...
+2026-05-28 19:23:06,933 - INFO - [init_db] - SQLite database initialized successfully.
+2026-05-28 19:23:06,933 - DEBUG - [main] - Verifying existence of target vault folder: 'D:\rafay\projects\youtube_recipes_graph\recipies_vault'
+2026-05-28 19:23:06,934 - INFO - [main] - Connecting to Todoist API to fetch remote projects list...
+2026-05-28 19:23:06,935 - CRITICAL - [main] - Fatal crash inside pipeline iteration loops: object of type 'ResultsPaginator' has no len()
+Traceback (most recent call last):
+  File "D:\rafay\projects\youtube_recipes_graph\script.py", line 195, in main
+    logger.debug(f"Total remote projects fetched from Todoist: {len(projects)}")
+                                                                ~~~^^^^^^^^^^
+TypeError: object of type 'ResultsPaginator' has no len()
+2026-05-28 19:23:06,936 - DEBUG - [main] - Closing persistent connection handles to SQLite.
+2026-05-28 19:23:06,936 - INFO - [main] - ========= PANTRY PIPELINE EXECUTION TERMINATED =========
+2026-05-28 19:24:31,074 - DEBUG - [<module>] - Retrieving Windows environment variables...
+2026-05-28 19:24:31,074 - INFO - [<module>] - Environment variables verified successfully.
+2026-05-28 19:24:31,074 - DEBUG - [<module>] - Initializing Todoist and Hugging Face API clients...
+2026-05-28 19:24:31,487 - INFO - [main] - ========= STARTING PANTRY PIPELINE IN DEBUG MODE =========
+2026-05-28 19:24:31,488 - DEBUG - [init_db] - Opening connection to local SQLite database 'pantry.db'...
+2026-05-28 19:24:31,488 - DEBUG - [init_db] - Ensuring 'processed_videos' table exists...
+2026-05-28 19:24:31,489 - INFO - [init_db] - SQLite database initialized successfully.
+2026-05-28 19:24:31,489 - DEBUG - [main] - Verifying existence of target vault folder: 'D:\rafay\projects\youtube_recipes_graph\recipies_vault'
+2026-05-28 19:24:31,490 - INFO - [main] - Connecting to Todoist API to fetch remote projects list...
+2026-05-28 19:24:31,490 - DEBUG - [trace] - connect_tcp.started host='api.todoist.com' port=443 local_address=None timeout=10.0 socket_options=None
+2026-05-28 19:24:31,558 - DEBUG - [trace] - connect_tcp.complete return_value=<httpcore._backends.sync.SyncStream object at 0x00000265E54D5010>
+2026-05-28 19:24:31,558 - DEBUG - [trace] - start_tls.started ssl_context=<ssl.SSLContext object at 0x00000265E53417F0> server_hostname='api.todoist.com' timeout=10.0
+2026-05-28 19:24:31,587 - DEBUG - [trace] - start_tls.complete return_value=<httpcore._backends.sync.SyncStream object at 0x00000265E53FE210>
+2026-05-28 19:24:31,588 - DEBUG - [trace] - send_request_headers.started request=<Request [b'GET']>
+2026-05-28 19:24:31,588 - DEBUG - [trace] - send_request_headers.complete
+2026-05-28 19:24:31,588 - DEBUG - [trace] - send_request_body.started request=<Request [b'GET']>
+2026-05-28 19:24:31,589 - DEBUG - [trace] - send_request_body.complete
+2026-05-28 19:24:31,589 - DEBUG - [trace] - receive_response_headers.started request=<Request [b'GET']>
+2026-05-28 19:24:31,946 - DEBUG - [trace] - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Content-Type', b'application/json'), (b'Transfer-Encoding', b'chunked'), (b'Connection', b'keep-alive'), (b'Date', b'Thu, 28 May 2026 14:24:31 GMT'), (b'Strict-Transport-Security', b'max-age=31536000; includeSubDomains; preload'), (b'Vary', b'Accept-Encoding'), (b'Content-Encoding', b'gzip'), (b'Referrer-Policy', b'strict-origin-when-cross-origin'), (b'Server', b'gunicorn'), (b'Set-Cookie', b'csrf=c101b300cb95467eadcf31a9ae9c21ba; Expires=Sun, 25-May-2036 14:24:31 GMT; Secure; Path=/; SameSite=None'), (b'Set-Cookie', b'tduser=v4.public.eyJ1c2VyX2lkIjogNTU4NTU4NDEsICJleHAiOiAiMjAyNi0wNi0xMVQxNDoyNDozMSswMDowMCJ9iiAF_93Jo-cdjwFqDdFvd05d4OaxdmV3jtNaU3S4iIXt99xKA7FWe-d350BFSLxUqdxSugpniHxZ3lKrec37CA; Domain=.todoist.com; Expires=Thu, 11-Jun-2026 14:24:31 GMT; Max-Age=1209600; Secure; HttpOnly; Path=/'), (b'Set-Cookie', b'todoistd="/CUdA09psYiwY7pwgn9sRGC/RQQ=?"; Domain=.todoist.com; Expires=Fri, 28-May-2027 14:24:31 GMT; Max-Age=31536000; Secure; HttpOnly; Path=/; SameSite=None'), (b'X-Cache', b'Miss from cloudfront'), (b'Via', b'1.1 9757f5594e4fc5a8f7f34507f242c1c8.cloudfront.net (CloudFront)'), (b'X-Amz-Cf-Pop', b'DXB53-P1'), (b'Alt-Svc', b'h3=":443"; ma=86400'), (b'X-Amz-Cf-Id', b'2zz1nKFpxrVwW6RdSiWXihovWjRnuKMYdXB9WNcnmCxh-_lEI6zWgg==')])
+2026-05-28 19:24:31,947 - INFO - [_send_single_request] - HTTP Request: GET https://api.todoist.com/api/v1/projects "HTTP/1.1 200 OK"
+2026-05-28 19:24:31,947 - DEBUG - [trace] - receive_response_body.started request=<Request [b'GET']>
+2026-05-28 19:24:31,947 - DEBUG - [trace] - receive_response_body.complete
+2026-05-28 19:24:31,948 - DEBUG - [trace] - response_closed.started
+2026-05-28 19:24:31,948 - DEBUG - [trace] - response_closed.complete
+2026-05-28 19:24:31,951 - DEBUG - [main] - Total remote projects fetched from Todoist: 4
+2026-05-28 19:24:31,951 - INFO - [main] - Target project identified (ID: 6gjc7mmCwmpcgp5p). Fetching pending tasks...
+2026-05-28 19:24:31,955 - DEBUG - [trace] - send_request_headers.started request=<Request [b'GET']>
+2026-05-28 19:24:31,955 - DEBUG - [trace] - send_request_headers.complete
+2026-05-28 19:24:31,955 - DEBUG - [trace] - send_request_body.started request=<Request [b'GET']>
+2026-05-28 19:24:31,956 - DEBUG - [trace] - send_request_body.complete
+2026-05-28 19:24:31,956 - DEBUG - [trace] - receive_response_headers.started request=<Request [b'GET']>
+2026-05-28 19:24:32,350 - DEBUG - [trace] - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Content-Type', b'application/json'), (b'Content-Length', b'744'), (b'Connection', b'keep-alive'), (b'Date', b'Thu, 28 May 2026 14:24:31 GMT'), (b'Vary', b'Accept-Encoding'), (b'Referrer-Policy', b'strict-origin-when-cross-origin'), (b'Server', b'gunicorn'), (b'Set-Cookie', b'todoistd="/CUdA09psYiwY7pwgn9sRGC/RQQ=?"; Domain=.todoist.com; Expires=Fri, 28-May-2027 14:24:31 GMT; Max-Age=31536000; Secure; HttpOnly; Path=/; SameSite=None'), (b'Strict-Transport-Security', b'max-age=31536000; includeSubDomains; preload'), (b'X-Cache', b'Miss from cloudfront'), (b'Via', b'1.1 9757f5594e4fc5a8f7f34507f242c1c8.cloudfront.net (CloudFront)'), (b'X-Amz-Cf-Pop', b'DXB53-P1'), (b'Alt-Svc', b'h3=":443"; ma=86400'), (b'X-Amz-Cf-Id', b'G2wMOmcbW7BjZyWC9fVG2tDuMu2EmUwNXB1o_gCGTN0AIXP1NcjdPQ==')])
+2026-05-28 19:24:32,350 - INFO - [_send_single_request] - HTTP Request: GET https://api.todoist.com/api/v1/tasks?project_id=6gjc7mmCwmpcgp5p "HTTP/1.1 200 OK"
+2026-05-28 19:24:32,351 - DEBUG - [trace] - receive_response_body.started request=<Request [b'GET']>
+2026-05-28 19:24:32,351 - DEBUG - [trace] - receive_response_body.complete
+2026-05-28 19:24:32,351 - DEBUG - [trace] - response_closed.started
+2026-05-28 19:24:32,351 - DEBUG - [trace] - response_closed.complete
+2026-05-28 19:24:32,358 - INFO - [main] - Queue Analysis: Found 1 target links pending execution inside project.
+2026-05-28 19:24:32,358 - INFO - [main] - --- Processing Queue Item [1/1]: 'https://youtube.com/shorts/K3Avk-etzHM' ---
+2026-05-28 19:24:32,358 - DEBUG - [extract_video_id] - Attempting to extract YouTube ID from string fragment: 'https://youtube.com/shorts/K3Avk-etzHM...'
+2026-05-28 19:24:32,359 - DEBUG - [extract_video_id] - Successfully extracted Video ID: K3Avk-etzHM
+2026-05-28 19:24:32,359 - DEBUG - [main] - Querying SQLite registry ledger for video_id: K3Avk-etzHM
+2026-05-28 19:24:32,363 - INFO - [get_transcript] - Fetching transcript for YouTube video: K3Avk-etzHM
+2026-05-28 19:24:32,363 - DEBUG - [get_transcript] - Calling youtube-transcript-api...
+2026-05-28 19:24:32,364 - ERROR - [get_transcript] - Failed to fetch/clean transcript for video K3Avk-etzHM. Error: type object 'YouTubeTranscriptApi' has no attribute 'get_transcript'
+Traceback (most recent call last):
+  File "D:\rafay\projects\youtube_recipes_graph\script.py", line 88, in get_transcript
+    transcript_raw = YouTubeTranscriptApi.get_transcript(video_id)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: type object 'YouTubeTranscriptApi' has no attribute 'get_transcript'
+2026-05-28 19:24:32,366 - WARNING - [main] - Aborting execution loop for video K3Avk-etzHM: Empty or missing transcript data stream.
+2026-05-28 19:24:32,366 - DEBUG - [main] - Closing persistent connection handles to SQLite.
+2026-05-28 19:24:32,367 - INFO - [main] - ========= PANTRY PIPELINE EXECUTION TERMINATED =========
+2026-05-28 19:24:32,367 - DEBUG - [trace] - close.started
+2026-05-28 19:24:32,368 - DEBUG - [trace] - close.complete
+2026-05-28 19:35:50,233 - DEBUG - [<module>] - Retrieving Windows environment variables...
+2026-05-28 19:35:50,235 - INFO - [<module>] - Environment variables verified successfully.
+2026-05-28 19:35:50,235 - DEBUG - [<module>] - Initializing Todoist and Hugging Face API clients...
+2026-05-28 19:35:50,654 - INFO - [main] - ========= STARTING PANTRY PIPELINE IN DEBUG MODE =========
+2026-05-28 19:35:50,654 - DEBUG - [init_db] - Opening connection to local SQLite database 'pantry.db'...
+2026-05-28 19:35:50,665 - DEBUG - [init_db] - Ensuring 'processed_videos' table exists...
+2026-05-28 19:35:50,675 - INFO - [init_db] - SQLite database initialized successfully.
+2026-05-28 19:35:50,675 - DEBUG - [main] - Verifying existence of target vault folder: 'D:\rafay\projects\youtube_recipes_graph\recipies_vault'
+2026-05-28 19:35:50,676 - INFO - [main] - Connecting to Todoist API to fetch remote projects list...
+2026-05-28 19:35:50,678 - DEBUG - [trace] - connect_tcp.started host='api.todoist.com' port=443 local_address=None timeout=10.0 socket_options=None
+2026-05-28 19:35:50,739 - DEBUG - [trace] - connect_tcp.complete return_value=<httpcore._backends.sync.SyncStream object at 0x000001C034135010>
+2026-05-28 19:35:50,740 - DEBUG - [trace] - start_tls.started ssl_context=<ssl.SSLContext object at 0x000001C033FA17F0> server_hostname='api.todoist.com' timeout=10.0
+2026-05-28 19:35:50,803 - DEBUG - [trace] - start_tls.complete return_value=<httpcore._backends.sync.SyncStream object at 0x000001C03405E210>
+2026-05-28 19:35:50,803 - DEBUG - [trace] - send_request_headers.started request=<Request [b'GET']>
+2026-05-28 19:35:50,803 - DEBUG - [trace] - send_request_headers.complete
+2026-05-28 19:35:50,804 - DEBUG - [trace] - send_request_body.started request=<Request [b'GET']>
+2026-05-28 19:35:50,804 - DEBUG - [trace] - send_request_body.complete
+2026-05-28 19:35:50,804 - DEBUG - [trace] - receive_response_headers.started request=<Request [b'GET']>
+2026-05-28 19:35:51,209 - DEBUG - [trace] - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Content-Type', b'application/json'), (b'Transfer-Encoding', b'chunked'), (b'Connection', b'keep-alive'), (b'Date', b'Thu, 28 May 2026 14:35:50 GMT'), (b'Strict-Transport-Security', b'max-age=31536000; includeSubDomains; preload'), (b'Vary', b'Accept-Encoding'), (b'Content-Encoding', b'gzip'), (b'Referrer-Policy', b'strict-origin-when-cross-origin'), (b'Server', b'gunicorn'), (b'Set-Cookie', b'csrf=82f3fc80a8af48b482cd4c0ae512bee9; Expires=Sun, 25-May-2036 14:35:50 GMT; Secure; Path=/; SameSite=None'), (b'Set-Cookie', b'tduser=v4.public.eyJ1c2VyX2lkIjogNTU4NTU4NDEsICJleHAiOiAiMjAyNi0wNi0xMVQxNDozNTo1MCswMDowMCJ9WReRrRob1YAlPPsf3y3WWovP9zs99x9iT-Zn5T2en_ulp0Byn-hDNm6UtbN-ElVa9FiVr5pv2HvIXSeTgKdVBQ; Domain=.todoist.com; Expires=Thu, 11-Jun-2026 14:35:50 GMT; Max-Age=1209600; Secure; HttpOnly; Path=/'), (b'Set-Cookie', b'todoistd="/CUdA09psYiwY7pwgn9sRGC/RQQ=?"; Domain=.todoist.com; Expires=Fri, 28-May-2027 14:35:50 GMT; Max-Age=31536000; Secure; HttpOnly; Path=/; SameSite=None'), (b'X-Cache', b'Miss from cloudfront'), (b'Via', b'1.1 20ee452c059acea070573a0f2b9b73c0.cloudfront.net (CloudFront)'), (b'X-Amz-Cf-Pop', b'DXB53-P1'), (b'Alt-Svc', b'h3=":443"; ma=86400'), (b'X-Amz-Cf-Id', b'dCJ_w5_PVDq5VtyZD94aw-pyyGJxQeHS2--vWNdDuYO9JpiKtGixWA==')])
+2026-05-28 19:35:51,210 - INFO - [_send_single_request] - HTTP Request: GET https://api.todoist.com/api/v1/projects "HTTP/1.1 200 OK"
+2026-05-28 19:35:51,212 - DEBUG - [trace] - receive_response_body.started request=<Request [b'GET']>
+2026-05-28 19:35:51,213 - DEBUG - [trace] - receive_response_body.complete
+2026-05-28 19:35:51,214 - DEBUG - [trace] - response_closed.started
+2026-05-28 19:35:51,214 - DEBUG - [trace] - response_closed.complete
+2026-05-28 19:35:51,219 - DEBUG - [main] - Total remote projects fetched from Todoist: 4
+2026-05-28 19:35:51,219 - INFO - [main] - Target project identified (ID: 6gjc7mmCwmpcgp5p). Fetching pending tasks...
+2026-05-28 19:35:51,221 - DEBUG - [trace] - send_request_headers.started request=<Request [b'GET']>
+2026-05-28 19:35:51,221 - DEBUG - [trace] - send_request_headers.complete
+2026-05-28 19:35:51,222 - DEBUG - [trace] - send_request_body.started request=<Request [b'GET']>
+2026-05-28 19:35:51,222 - DEBUG - [trace] - send_request_body.complete
+2026-05-28 19:35:51,222 - DEBUG - [trace] - receive_response_headers.started request=<Request [b'GET']>
+2026-05-28 19:35:51,610 - DEBUG - [trace] - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Content-Type', b'application/json'), (b'Content-Length', b'744'), (b'Connection', b'keep-alive'), (b'Date', b'Thu, 28 May 2026 14:35:51 GMT'), (b'Vary', b'Accept-Encoding'), (b'Referrer-Policy', b'strict-origin-when-cross-origin'), (b'Server', b'gunicorn'), (b'Set-Cookie', b'todoistd="/CUdA09psYiwY7pwgn9sRGC/RQQ=?"; Domain=.todoist.com; Expires=Fri, 28-May-2027 14:35:51 GMT; Max-Age=31536000; Secure; HttpOnly; Path=/; SameSite=None'), (b'Strict-Transport-Security', b'max-age=31536000; includeSubDomains; preload'), (b'X-Cache', b'Miss from cloudfront'), (b'Via', b'1.1 20ee452c059acea070573a0f2b9b73c0.cloudfront.net (CloudFront)'), (b'X-Amz-Cf-Pop', b'DXB53-P1'), (b'Alt-Svc', b'h3=":443"; ma=86400'), (b'X-Amz-Cf-Id', b'17BmP95htvSw9-mcs6qsZgt3x-LPypfdSO7N6Z_xPCcH2T6TCDHyiA==')])
+2026-05-28 19:35:51,611 - INFO - [_send_single_request] - HTTP Request: GET https://api.todoist.com/api/v1/tasks?project_id=6gjc7mmCwmpcgp5p "HTTP/1.1 200 OK"
+2026-05-28 19:35:51,611 - DEBUG - [trace] - receive_response_body.started request=<Request [b'GET']>
+2026-05-28 19:35:51,612 - DEBUG - [trace] - receive_response_body.complete
+2026-05-28 19:35:51,612 - DEBUG - [trace] - response_closed.started
+2026-05-28 19:35:51,612 - DEBUG - [trace] - response_closed.complete
+2026-05-28 19:35:51,619 - INFO - [main] - Queue Analysis: Found 1 target links pending execution inside project.
+2026-05-28 19:35:51,619 - INFO - [main] - --- Processing Queue Item [1/1]: 'https://youtube.com/shorts/K3Avk-etzHM' ---
+2026-05-28 19:35:51,619 - DEBUG - [extract_video_id] - Attempting to extract YouTube ID from string fragment: 'https://youtube.com/shorts/K3Avk-etzHM...'
+2026-05-28 19:35:51,620 - DEBUG - [extract_video_id] - Successfully extracted Video ID: K3Avk-etzHM
+2026-05-28 19:35:51,620 - DEBUG - [main] - Querying SQLite registry ledger for video_id: K3Avk-etzHM
+2026-05-28 19:35:51,620 - INFO - [get_transcript] - Fetching transcript for YouTube video: K3Avk-etzHM
+2026-05-28 19:35:51,620 - DEBUG - [get_transcript] - Instantiating YouTubeTranscriptApi client instance...
+2026-05-28 19:35:51,621 - DEBUG - [get_transcript] - Calling .fetch() on API instance to extract captions...
+2026-05-28 19:35:51,624 - DEBUG - [_new_conn] - Starting new HTTPS connection (1): www.youtube.com:443
+2026-05-28 19:35:52,054 - DEBUG - [_make_request] - https://www.youtube.com:443 "GET /watch?v=K3Avk-etzHM HTTP/1.1" 200 None
+2026-05-28 19:35:52,836 - DEBUG - [_make_request] - https://www.youtube.com:443 "POST /youtubei/v1/player?key=AIzaSyAO_FJ2SlqU8Q4STEHLGCilw_Y9_11qcW8 HTTP/1.1" 200 None
+2026-05-28 19:35:53,039 - DEBUG - [_make_request] - https://www.youtube.com:443 "GET /api/timedtext?v=K3Avk-etzHM&ei=yFIYarG5GZ-Ci9oPsPzHqAw&caps=asr&opi=112496729&xoaf=5&xowf=1&xospf=1&hl=en&ip=0.0.0.0&ipbits=0&expire=1780004152&sparams=ip,ipbits,expire,v,ei,caps,opi,xoaf&signature=1EB88590B76838C4805ED8296CF3CECEE53A62AB.AD6C13B6CCB7201F5E56A6BF9CDA88A1FDEA4B92&key=yt8&kind=asr&lang=en&variant=gemini HTTP/1.1" 200 None
+2026-05-28 19:35:53,045 - DEBUG - [get_transcript] - Raw transcript fetched. Total timestamp blocks received: 30
+2026-05-28 19:35:53,046 - DEBUG - [get_transcript] - Formatting raw timestamps into text blocks using TextFormatter...
+2026-05-28 19:35:53,046 - DEBUG - [get_transcript] - Cleaning text: Stripping line breaks and normalizing whitespace...
+2026-05-28 19:35:53,046 - DEBUG - [get_transcript] - Transcript processing complete. Total character count: 1144
+2026-05-28 19:35:53,048 - INFO - [process_with_llm] - Preparing payload for Hugging Face Serverless Inference API...
+2026-05-28 19:35:53,048 - DEBUG - [process_with_llm] - Sending request to model 'Qwen/Qwen2.5-7B-Instruct'. Payload sizes - System Prompt: 476 chars, Transcript: 1144 chars.
+2026-05-28 19:35:53,471 - DEBUG - [trace] - connect_tcp.started host='router.huggingface.co' port=443 local_address=None timeout=None socket_options=None
+2026-05-28 19:35:53,650 - DEBUG - [trace] - connect_tcp.complete return_value=<httpcore._backends.sync.SyncStream object at 0x000001C034194910>
+2026-05-28 19:35:53,650 - DEBUG - [trace] - start_tls.started ssl_context=<ssl.SSLContext object at 0x000001C033E93930> server_hostname='router.huggingface.co' timeout=None
+2026-05-28 19:35:53,687 - DEBUG - [trace] - start_tls.complete return_value=<httpcore._backends.sync.SyncStream object at 0x000001C0341310F0>
+2026-05-28 19:35:53,688 - DEBUG - [trace] - send_request_headers.started request=<Request [b'POST']>
+2026-05-28 19:35:53,688 - DEBUG - [trace] - send_request_headers.complete
+2026-05-28 19:35:53,688 - DEBUG - [trace] - send_request_body.started request=<Request [b'POST']>
+2026-05-28 19:35:53,689 - DEBUG - [trace] - send_request_body.complete
+2026-05-28 19:35:53,689 - DEBUG - [trace] - receive_response_headers.started request=<Request [b'POST']>
+2026-05-28 19:35:55,199 - DEBUG - [trace] - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Content-Type', b'application/json; charset=utf-8'), (b'Transfer-Encoding', b'chunked'), (b'Connection', b'keep-alive'), (b'Date', b'Thu, 28 May 2026 14:35:54 GMT'), (b'x-api-received', b'2026-05-28T14:35:53.659Z'), (b'x-inference-version', b'v2'), (b'X-Powered-By', b'huggingface-moon'), (b'x-request-id', b'okueQPU-6Ng1vN-a02dfd0bf9d2d688'), (b'cross-origin-opener-policy', b'same-origin'), (b'Referrer-Policy', b'strict-origin-when-cross-origin'), (b'vary', b'accept-encoding'), (b'access-control-allow-origin', b'*'), (b'Access-Control-Expose-Headers', b'X-Repo-Commit,X-Request-Id,X-Error-Code,X-Error-Message,X-Total-Count,ETag,Link,Accept-Ranges,Content-Range,X-Linked-Size,X-Linked-ETag,X-Xet-Hash'), (b'X-Robots-Tag', b'none'), (b'x-inference-provider', b'together'), (b'cf-cache-status', b'DYNAMIC'), (b'cf-ray', b'a02dfd0bf9d2d688-IAD'), (b'etag', b'W/"406-t4NCQ7GuNkirTUJr80p95PpgDsU"'), (b'server', b'cloudflare'), (b'strict-transport-security', b'max-age=15552000; includeSubDomains'), (b'x-api-call-end', b'2026-05-28T14:35:54.819Z'), (b'x-api-call-start', b'2026-05-28T14:35:53.669Z'), (b'X-Cache', b'Miss from cloudfront'), (b'Via', b'1.1 fe9166a53aae6087131fc40d6e86b020.cloudfront.net (CloudFront)'), (b'X-Amz-Cf-Pop', b'DXB53-P2'), (b'X-Amz-Cf-Id', b'2rrW3hpljQNbr2Dvxn5bSNau5cvfUOGqrWa92HlUKBMv3yY4shEtIQ==')])
+2026-05-28 19:35:55,199 - INFO - [_send_single_request] - HTTP Request: POST https://router.huggingface.co/v1/chat/completions "HTTP/1.1 200 OK"
+2026-05-28 19:35:55,200 - DEBUG - [trace] - receive_response_body.started request=<Request [b'POST']>
+2026-05-28 19:35:55,200 - DEBUG - [trace] - receive_response_body.complete
+2026-05-28 19:35:55,200 - DEBUG - [trace] - response_closed.started
+2026-05-28 19:35:55,201 - DEBUG - [trace] - response_closed.complete
+2026-05-28 19:35:55,201 - DEBUG - [process_with_llm] - Raw response block received from Hugging Face model:
+```json
+{
+  "recipe_name": "Smash Burgers with French Onion Melt",
+  "time_minutes": 30,
+  "components": [
+    {
+      "name": "Onions",
+      "ingredients": ["Onions"]
+    },
+    {
+      "name": "Sauce",
+      "ingredients": ["Dijon mustard", "whole-grain mustard", "mayo"]
+    },
+    {
+      "name": "Patties",
+      "ingredients": ["Beef"]
+    },
+    {
+      "name": "Garnish",
+      "ingredients": ["Havarti cheese"]
+    }
+  ]
+}
+```
+2026-05-28 19:35:55,201 - DEBUG - [process_with_llm] - Stripping potential markdown code fence wrappers from JSON output...
+2026-05-28 19:35:55,202 - DEBUG - [process_with_llm] - Parsing cleaned string into a native Python dictionary...
+2026-05-28 19:35:55,202 - INFO - [process_with_llm] - Successfully generated structured data object for recipe: 'Smash Burgers with French Onion Melt'
+2026-05-28 19:35:55,202 - DEBUG - [save_to_obsidian] - Sanitizing recipe title 'Smash Burgers with French Onion Melt' for Windows filesystem compatibility...
+2026-05-28 19:35:55,202 - DEBUG - [save_to_obsidian] - Target file path resolved to: 'D:\rafay\projects\youtube_recipes_graph\recipies_vault\Smash Burgers with French Onion Melt.md'
+2026-05-28 19:35:55,202 - DEBUG - [save_to_obsidian] - Assembling YAML frontmatter string configurations...
+2026-05-28 19:35:55,203 - DEBUG - [save_to_obsidian] - Writing file out to disk using UTF-8 encoding scheme...
+2026-05-28 19:35:55,203 - INFO - [save_to_obsidian] - Saved custom Markdown page to Obsidian Vault: 'Smash Burgers with French Onion Melt.md'
+2026-05-28 19:35:55,204 - DEBUG - [main] - Logging unique key K3Avk-etzHM into SQLite local 'processed_videos' table...
+2026-05-28 19:35:55,208 - DEBUG - [main] - Database transaction successfully committed.
+2026-05-28 19:35:55,209 - INFO - [main] - Sending closure verification signal back to Todoist for Task ID: 6gjcPf37rmXgr2mp
+2026-05-28 19:35:55,209 - CRITICAL - [main] - Fatal crash inside pipeline iteration loops: 'TodoistAPI' object has no attribute 'close_task'
+Traceback (most recent call last):
+  File "D:\rafay\projects\youtube_recipes_graph\script.py", line 266, in main
+    todoist.close_task(task_id=task.id)
+    ^^^^^^^^^^^^^^^^^^
+AttributeError: 'TodoistAPI' object has no attribute 'close_task'. Did you mean: 'move_task'?
+2026-05-28 19:35:55,211 - DEBUG - [main] - Closing persistent connection handles to SQLite.
+2026-05-28 19:35:55,211 - INFO - [main] - ========= PANTRY PIPELINE EXECUTION TERMINATED =========
+2026-05-28 19:35:55,212 - DEBUG - [trace] - close.started
+2026-05-28 19:35:55,212 - DEBUG - [trace] - close.complete
+2026-05-28 19:35:55,213 - DEBUG - [trace] - close.started
+2026-05-28 19:35:55,213 - DEBUG - [trace] - close.complete
+2026-05-28 19:38:32,498 - DEBUG - [<module>] - Retrieving Windows environment variables...
+2026-05-28 19:38:32,499 - INFO - [<module>] - Environment variables verified successfully.
+2026-05-28 19:38:32,499 - DEBUG - [<module>] - Initializing Todoist and Hugging Face API clients...
+2026-05-28 19:38:32,918 - INFO - [main] - ========= STARTING PANTRY PIPELINE IN DEBUG MODE =========
+2026-05-28 19:38:32,918 - DEBUG - [init_db] - Opening connection to local SQLite database 'pantry.db'...
+2026-05-28 19:38:32,926 - DEBUG - [init_db] - Ensuring 'processed_videos' table exists...
+2026-05-28 19:38:32,936 - INFO - [init_db] - SQLite database initialized successfully.
+2026-05-28 19:38:32,936 - DEBUG - [main] - Verifying existence of target vault folder: 'D:\rafay\projects\youtube_recipes_graph\recipies_vault'
+2026-05-28 19:38:32,937 - INFO - [main] - Connecting to Todoist API to fetch remote projects list...
+2026-05-28 19:38:32,938 - DEBUG - [trace] - connect_tcp.started host='api.todoist.com' port=443 local_address=None timeout=10.0 socket_options=None
+2026-05-28 19:38:33,029 - DEBUG - [trace] - connect_tcp.complete return_value=<httpcore._backends.sync.SyncStream object at 0x0000027D3A395010>
+2026-05-28 19:38:33,030 - DEBUG - [trace] - start_tls.started ssl_context=<ssl.SSLContext object at 0x0000027D3A2017F0> server_hostname='api.todoist.com' timeout=10.0
+2026-05-28 19:38:33,072 - DEBUG - [trace] - start_tls.complete return_value=<httpcore._backends.sync.SyncStream object at 0x0000027D3A2BE210>
+2026-05-28 19:38:33,072 - DEBUG - [trace] - send_request_headers.started request=<Request [b'GET']>
+2026-05-28 19:38:33,073 - DEBUG - [trace] - send_request_headers.complete
+2026-05-28 19:38:33,073 - DEBUG - [trace] - send_request_body.started request=<Request [b'GET']>
+2026-05-28 19:38:33,073 - DEBUG - [trace] - send_request_body.complete
+2026-05-28 19:38:33,073 - DEBUG - [trace] - receive_response_headers.started request=<Request [b'GET']>
+2026-05-28 19:38:34,726 - DEBUG - [trace] - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Content-Type', b'application/json'), (b'Transfer-Encoding', b'chunked'), (b'Connection', b'keep-alive'), (b'Date', b'Thu, 28 May 2026 14:38:34 GMT'), (b'Strict-Transport-Security', b'max-age=31536000; includeSubDomains; preload'), (b'Vary', b'Accept-Encoding'), (b'Content-Encoding', b'gzip'), (b'Referrer-Policy', b'strict-origin-when-cross-origin'), (b'Server', b'gunicorn'), (b'Set-Cookie', b'csrf=c04001b495fc4306abf9fe1713cc37cd; Expires=Sun, 25-May-2036 14:38:34 GMT; Secure; Path=/; SameSite=None'), (b'Set-Cookie', b'tduser=v4.public.eyJ1c2VyX2lkIjogNTU4NTU4NDEsICJleHAiOiAiMjAyNi0wNi0xMVQxNDozODozNCswMDowMCJ91Aoe5VGV3zfj3E-J4BnufojYOAWIqiUPADxOHaEDYO6Az-pkZz_NKQHnQmTs3POVb1Ve-us0qUSimOGrf9BzAA; Domain=.todoist.com; Expires=Thu, 11-Jun-2026 14:38:34 GMT; Max-Age=1209600; Secure; HttpOnly; Path=/'), (b'Set-Cookie', b'todoistd="/CUdA09psYiwY7pwgn9sRGC/RQQ=?"; Domain=.todoist.com; Expires=Fri, 28-May-2027 14:38:34 GMT; Max-Age=31536000; Secure; HttpOnly; Path=/; SameSite=None'), (b'X-Cache', b'Miss from cloudfront'), (b'Via', b'1.1 d8458fc1c5841ba25e44d9ece4030638.cloudfront.net (CloudFront)'), (b'X-Amz-Cf-Pop', b'DXB53-P1'), (b'Alt-Svc', b'h3=":443"; ma=86400'), (b'X-Amz-Cf-Id', b'fQsy6Z-29f63PFbdnwsq8RF08iVR9AqNxSzwvPeXIGYFKdAvwSBsPg==')])
+2026-05-28 19:38:34,727 - INFO - [_send_single_request] - HTTP Request: GET https://api.todoist.com/api/v1/projects "HTTP/1.1 200 OK"
+2026-05-28 19:38:34,731 - DEBUG - [trace] - receive_response_body.started request=<Request [b'GET']>
+2026-05-28 19:38:34,731 - DEBUG - [trace] - receive_response_body.complete
+2026-05-28 19:38:34,732 - DEBUG - [trace] - response_closed.started
+2026-05-28 19:38:34,732 - DEBUG - [trace] - response_closed.complete
+2026-05-28 19:38:34,735 - DEBUG - [main] - Total remote projects fetched from Todoist: 4
+2026-05-28 19:38:34,736 - INFO - [main] - Target project identified (ID: 6gjc7mmCwmpcgp5p). Fetching pending tasks...
+2026-05-28 19:38:34,737 - DEBUG - [trace] - send_request_headers.started request=<Request [b'GET']>
+2026-05-28 19:38:34,738 - DEBUG - [trace] - send_request_headers.complete
+2026-05-28 19:38:34,738 - DEBUG - [trace] - send_request_body.started request=<Request [b'GET']>
+2026-05-28 19:38:34,739 - DEBUG - [trace] - send_request_body.complete
+2026-05-28 19:38:34,739 - DEBUG - [trace] - receive_response_headers.started request=<Request [b'GET']>
+2026-05-28 19:38:35,124 - DEBUG - [trace] - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Content-Type', b'application/json'), (b'Content-Length', b'744'), (b'Connection', b'keep-alive'), (b'Date', b'Thu, 28 May 2026 14:38:34 GMT'), (b'Vary', b'Accept-Encoding'), (b'Referrer-Policy', b'strict-origin-when-cross-origin'), (b'Server', b'gunicorn'), (b'Set-Cookie', b'todoistd="/CUdA09psYiwY7pwgn9sRGC/RQQ=?"; Domain=.todoist.com; Expires=Fri, 28-May-2027 14:38:34 GMT; Max-Age=31536000; Secure; HttpOnly; Path=/; SameSite=None'), (b'Strict-Transport-Security', b'max-age=31536000; includeSubDomains; preload'), (b'X-Cache', b'Miss from cloudfront'), (b'Via', b'1.1 d8458fc1c5841ba25e44d9ece4030638.cloudfront.net (CloudFront)'), (b'X-Amz-Cf-Pop', b'DXB53-P1'), (b'Alt-Svc', b'h3=":443"; ma=86400'), (b'X-Amz-Cf-Id', b'X3K1scVDnyA678HxdskGn8LYZ8vajKwVbemS8CRc_4FK_5XjooAY_g==')])
+2026-05-28 19:38:35,125 - INFO - [_send_single_request] - HTTP Request: GET https://api.todoist.com/api/v1/tasks?project_id=6gjc7mmCwmpcgp5p "HTTP/1.1 200 OK"
+2026-05-28 19:38:35,125 - DEBUG - [trace] - receive_response_body.started request=<Request [b'GET']>
+2026-05-28 19:38:35,126 - DEBUG - [trace] - receive_response_body.complete
+2026-05-28 19:38:35,126 - DEBUG - [trace] - response_closed.started
+2026-05-28 19:38:35,126 - DEBUG - [trace] - response_closed.complete
+2026-05-28 19:38:35,133 - INFO - [main] - Queue Analysis: Found 1 target links pending execution inside project.
+2026-05-28 19:38:35,133 - INFO - [main] - --- Processing Queue Item [1/1]: 'https://youtube.com/shorts/K3Avk-etzHM' ---
+2026-05-28 19:38:35,133 - DEBUG - [extract_video_id] - Attempting to extract YouTube ID from string fragment: 'https://youtube.com/shorts/K3Avk-etzHM...'
+2026-05-28 19:38:35,134 - DEBUG - [extract_video_id] - Successfully extracted Video ID: K3Avk-etzHM
+2026-05-28 19:38:35,134 - DEBUG - [main] - Querying SQLite registry ledger for video_id: K3Avk-etzHM
+2026-05-28 19:38:35,137 - INFO - [main] - Video K3Avk-etzHM found in database. This task is a duplicate. Instructing Todoist to close task.
+2026-05-28 19:38:35,137 - CRITICAL - [main] - Fatal crash inside pipeline iteration loops: 'TodoistAPI' object has no attribute 'close_task'
+Traceback (most recent call last):
+  File "D:\rafay\projects\youtube_recipes_graph\script.py", line 240, in main
+    todoist.close_task(task.id)
+    ^^^^^^^^^^^^^^^^^^
+AttributeError: 'TodoistAPI' object has no attribute 'close_task'. Did you mean: 'move_task'?
+2026-05-28 19:38:35,139 - DEBUG - [main] - Closing persistent connection handles to SQLite.
+2026-05-28 19:38:35,139 - INFO - [main] - ========= PANTRY PIPELINE EXECUTION TERMINATED =========
+2026-05-28 19:38:35,140 - DEBUG - [trace] - close.started
+2026-05-28 19:38:35,141 - DEBUG - [trace] - close.complete
+2026-05-28 19:38:47,372 - DEBUG - [<module>] - Retrieving Windows environment variables...
+2026-05-28 19:38:47,372 - INFO - [<module>] - Environment variables verified successfully.
+2026-05-28 19:38:47,372 - DEBUG - [<module>] - Initializing Todoist and Hugging Face API clients...
+2026-05-28 19:38:47,787 - INFO - [main] - ========= STARTING PANTRY PIPELINE IN DEBUG MODE =========
+2026-05-28 19:38:47,787 - DEBUG - [init_db] - Opening connection to local SQLite database 'pantry.db'...
+2026-05-28 19:38:47,788 - DEBUG - [init_db] - Ensuring 'processed_videos' table exists...
+2026-05-28 19:38:47,789 - INFO - [init_db] - SQLite database initialized successfully.
+2026-05-28 19:38:47,789 - DEBUG - [main] - Verifying existence of target vault folder: 'D:\rafay\projects\youtube_recipes_graph\recipies_vault'
+2026-05-28 19:38:47,789 - INFO - [main] - Connecting to Todoist API to fetch remote projects list...
+2026-05-28 19:38:47,790 - DEBUG - [trace] - connect_tcp.started host='api.todoist.com' port=443 local_address=None timeout=10.0 socket_options=None
+2026-05-28 19:38:47,829 - DEBUG - [trace] - connect_tcp.complete return_value=<httpcore._backends.sync.SyncStream object at 0x000001A17EDB5010>
+2026-05-28 19:38:47,829 - DEBUG - [trace] - start_tls.started ssl_context=<ssl.SSLContext object at 0x000001A17EC217F0> server_hostname='api.todoist.com' timeout=10.0
+2026-05-28 19:38:47,861 - DEBUG - [trace] - start_tls.complete return_value=<httpcore._backends.sync.SyncStream object at 0x000001A17ECDE210>
+2026-05-28 19:38:47,861 - DEBUG - [trace] - send_request_headers.started request=<Request [b'GET']>
+2026-05-28 19:38:47,862 - DEBUG - [trace] - send_request_headers.complete
+2026-05-28 19:38:47,862 - DEBUG - [trace] - send_request_body.started request=<Request [b'GET']>
+2026-05-28 19:38:47,862 - DEBUG - [trace] - send_request_body.complete
+2026-05-28 19:38:47,862 - DEBUG - [trace] - receive_response_headers.started request=<Request [b'GET']>
+2026-05-28 19:38:48,422 - DEBUG - [trace] - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Content-Type', b'application/json'), (b'Transfer-Encoding', b'chunked'), (b'Connection', b'keep-alive'), (b'Date', b'Thu, 28 May 2026 14:38:48 GMT'), (b'Strict-Transport-Security', b'max-age=31536000; includeSubDomains; preload'), (b'Vary', b'Accept-Encoding'), (b'Content-Encoding', b'gzip'), (b'Referrer-Policy', b'strict-origin-when-cross-origin'), (b'Server', b'gunicorn'), (b'Set-Cookie', b'csrf=48868165200541f899157c06489aa5bd; Expires=Sun, 25-May-2036 14:38:47 GMT; Secure; Path=/; SameSite=None'), (b'Set-Cookie', b'tduser=v4.public.eyJ1c2VyX2lkIjogNTU4NTU4NDEsICJleHAiOiAiMjAyNi0wNi0xMVQxNDozODo0OCswMDowMCJ92YwRmo0OsdPn22OxIKqgO6vezYlhJML9_-SLHt8aHtFwTa7vPs64yFlFNQMRkSe4JhJ09Qqz82A-ytdtQx9UCQ; Domain=.todoist.com; Expires=Thu, 11-Jun-2026 14:38:48 GMT; Max-Age=1209600; Secure; HttpOnly; Path=/'), (b'Set-Cookie', b'todoistd="/CUdA09psYiwY7pwgn9sRGC/RQQ=?"; Domain=.todoist.com; Expires=Fri, 28-May-2027 14:38:48 GMT; Max-Age=31536000; Secure; HttpOnly; Path=/; SameSite=None'), (b'X-Cache', b'Miss from cloudfront'), (b'Via', b'1.1 d8e9ffe7941d6502afb391439bf6d47c.cloudfront.net (CloudFront)'), (b'X-Amz-Cf-Pop', b'DXB53-P1'), (b'Alt-Svc', b'h3=":443"; ma=86400'), (b'X-Amz-Cf-Id', b'c05vhmvhmtBq6k0EosaO7CSUAO4H0xPwMBEfOfElaMRcxLxaHNmvcw==')])
+2026-05-28 19:38:48,424 - INFO - [_send_single_request] - HTTP Request: GET https://api.todoist.com/api/v1/projects "HTTP/1.1 200 OK"
+2026-05-28 19:38:48,424 - DEBUG - [trace] - receive_response_body.started request=<Request [b'GET']>
+2026-05-28 19:38:48,424 - DEBUG - [trace] - receive_response_body.complete
+2026-05-28 19:38:48,425 - DEBUG - [trace] - response_closed.started
+2026-05-28 19:38:48,425 - DEBUG - [trace] - response_closed.complete
+2026-05-28 19:38:48,427 - DEBUG - [main] - Total remote projects fetched from Todoist: 4
+2026-05-28 19:38:48,428 - INFO - [main] - Target project identified (ID: 6gjc7mmCwmpcgp5p). Fetching pending tasks...
+2026-05-28 19:38:48,428 - DEBUG - [trace] - send_request_headers.started request=<Request [b'GET']>
+2026-05-28 19:38:48,429 - DEBUG - [trace] - send_request_headers.complete
+2026-05-28 19:38:48,429 - DEBUG - [trace] - send_request_body.started request=<Request [b'GET']>
+2026-05-28 19:38:48,429 - DEBUG - [trace] - send_request_body.complete
+2026-05-28 19:38:48,430 - DEBUG - [trace] - receive_response_headers.started request=<Request [b'GET']>
+2026-05-28 19:38:49,372 - DEBUG - [trace] - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Content-Type', b'application/json'), (b'Content-Length', b'744'), (b'Connection', b'keep-alive'), (b'Date', b'Thu, 28 May 2026 14:38:49 GMT'), (b'Vary', b'Accept-Encoding'), (b'Referrer-Policy', b'strict-origin-when-cross-origin'), (b'Server', b'gunicorn'), (b'Set-Cookie', b'todoistd="/CUdA09psYiwY7pwgn9sRGC/RQQ=?"; Domain=.todoist.com; Expires=Fri, 28-May-2027 14:38:49 GMT; Max-Age=31536000; Secure; HttpOnly; Path=/; SameSite=None'), (b'Strict-Transport-Security', b'max-age=31536000; includeSubDomains; preload'), (b'X-Cache', b'Miss from cloudfront'), (b'Via', b'1.1 d8e9ffe7941d6502afb391439bf6d47c.cloudfront.net (CloudFront)'), (b'X-Amz-Cf-Pop', b'DXB53-P1'), (b'Alt-Svc', b'h3=":443"; ma=86400'), (b'X-Amz-Cf-Id', b'lCjhTdAKA9H9cumqou6qmw_Xtg9YiiTTumxV4tToej7NeAxRaUsqbA==')])
+2026-05-28 19:38:49,373 - INFO - [_send_single_request] - HTTP Request: GET https://api.todoist.com/api/v1/tasks?project_id=6gjc7mmCwmpcgp5p "HTTP/1.1 200 OK"
+2026-05-28 19:38:49,373 - DEBUG - [trace] - receive_response_body.started request=<Request [b'GET']>
+2026-05-28 19:38:49,374 - DEBUG - [trace] - receive_response_body.complete
+2026-05-28 19:38:49,374 - DEBUG - [trace] - response_closed.started
+2026-05-28 19:38:49,374 - DEBUG - [trace] - response_closed.complete
+2026-05-28 19:38:49,380 - INFO - [main] - Queue Analysis: Found 1 target links pending execution inside project.
+2026-05-28 19:38:49,380 - INFO - [main] - --- Processing Queue Item [1/1]: 'https://youtube.com/shorts/K3Avk-etzHM' ---
+2026-05-28 19:38:49,381 - DEBUG - [extract_video_id] - Attempting to extract YouTube ID from string fragment: 'https://youtube.com/shorts/K3Avk-etzHM...'
+2026-05-28 19:38:49,381 - DEBUG - [extract_video_id] - Successfully extracted Video ID: K3Avk-etzHM
+2026-05-28 19:38:49,381 - DEBUG - [main] - Querying SQLite registry ledger for video_id: K3Avk-etzHM
+2026-05-28 19:38:49,382 - INFO - [main] - Video K3Avk-etzHM found in database. This task is a duplicate. Instructing Todoist to close task.
+2026-05-28 19:38:49,382 - CRITICAL - [main] - Fatal crash inside pipeline iteration loops: Either `project_id`, `section_id`, or `parent_id` must be provided.
+Traceback (most recent call last):
+  File "D:\rafay\projects\youtube_recipes_graph\script.py", line 240, in main
+    todoist.move_task(task.id)
+    ~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\Dell\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\todoist_api_python\api.py", line 497, in move_task
+    raise ValueError(
+        "Either `project_id`, `section_id`, or `parent_id` must be provided."
+    )
+ValueError: Either `project_id`, `section_id`, or `parent_id` must be provided.
+2026-05-28 19:38:49,384 - DEBUG - [main] - Closing persistent connection handles to SQLite.
+2026-05-28 19:38:49,385 - INFO - [main] - ========= PANTRY PIPELINE EXECUTION TERMINATED =========
+2026-05-28 19:38:49,385 - DEBUG - [trace] - close.started
+2026-05-28 19:38:49,385 - DEBUG - [trace] - close.complete
