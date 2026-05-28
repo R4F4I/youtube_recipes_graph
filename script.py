@@ -111,8 +111,9 @@ def get_transcript(video_id):
         return None
 
 def process_with_llm(transcript):
-    logger.info("Preparing payload for Hugging Face Serverless Inference API...")
+    logger.info("Preparing payload for Hugging Face Dynamic Inference...")
     system_prompt = """You are a culinary data extractor. Read the video transcript and extract the recipe into the exact JSON format requested. Do not include any text outside the JSON block.
+    Ensure ingredient names are isolated cleanly for the flat lists, but include their measurements in the detail fields.
     
     EXPECTED JSON SCHEMA:
     {
@@ -121,8 +122,13 @@ def process_with_llm(transcript):
       "components": [
         {
           "name": "Component Name (e.g. Protein, Sauce, Garnish)",
-          "ingredients": ["Clean ingredient name 1", "Clean ingredient name 2"]
+          "ingredients": ["Clean ingredient name 1", "Clean ingredient name 2"],
+          "ingredients_with_amounts": ["2 Large Clean ingredient name 1 (sliced thin)", "1 tbsp Clean ingredient name 2"]
         }
+      ],
+      "instructions": [
+        "Step 1 text...",
+        "Step 2 text..."
       ]
     }"""
     
@@ -131,15 +137,38 @@ def process_with_llm(transcript):
         {"role": "user", "content": f"Extract the recipe from this transcript:\n\n{transcript}"}
     ]
     
-    logger.debug(f"Sending request to model 'Qwen/Qwen2.5-7B-Instruct'. Payload sizes - System Prompt: {len(system_prompt)} chars, Transcript: {len(transcript)} chars.")
-    response = hf_client.chat_completion(
-        messages=messages,
-        max_tokens=1000,
-        temperature=0.1
-    )
+    # List of rock-solid structured data extraction models to loop through if one is down
+    candidate_models = [
+        "Qwen/Qwen2.5-7B-Instruct",
+        "meta-llama/Llama-3.1-8B-Instruct",
+        "mistralai/Mistral-7B-Instruct-v0.3"
+    ]
     
-    raw_output = response.choices[0].message.content
-    logger.debug(f"Raw response block received from Hugging Face model:\n{raw_output}")
+    raw_output = None
+    for model_path in candidate_models:
+        try:
+            logger.debug(f"Attempting inference via model provider endpoint: '{model_path}'...")
+            
+            # Re-initializing client wrapper dynamically targeting the fallback pool
+            temp_client = InferenceClient(model_path, token=HF_TOKEN)
+            
+            response = temp_client.chat_completion(
+                messages=messages,
+                max_tokens=1200,
+                temperature=0.1
+            )
+            raw_output = response.choices[0].message.content
+            logger.info(f"Successfully received structured compilation from provider: {model_path}")
+            break # Break out of the loop if execution succeeds
+            
+        except Exception as api_err:
+            logger.warning(f"Endpoint '{model_path}' failed or turned away request. Error: {api_err}. Trying next fallback...")
+            continue
+
+    if not raw_output:
+        raise RuntimeError("All public Hugging Face model endpoints in the fallback cluster rejected the payload.")
+    
+    logger.debug(f"Raw response block received:\n{raw_output}")
     
     logger.debug("Stripping potential markdown code fence wrappers from JSON output...")
     clean_json = re.sub(r'```json|```', '', raw_output).strip()
@@ -151,14 +180,24 @@ def process_with_llm(transcript):
 
 def save_to_obsidian(video_id, recipe_data):
     title = recipe_data.get("recipe_name", f"Recipe_{video_id}")
-    logger.debug(f"Sanitizing recipe title '{title}' for Windows filesystem compatibility...")
     title = re.sub(r'[\\/*?:"<>|]', "", title).strip()
     
     filename = f"{title}.md"
     filepath = os.path.join(OBSIDIAN_VAULT_PATH, filename)
-    logger.debug(f"Target file path resolved to: '{filepath}'")
     
-    logger.debug("Assembling YAML frontmatter string configurations...")
+    # --- 1. EXTRACT UNIQUE FLATTENED LISTS ---
+    flat_components = []
+    flat_ingredients = set() # Using a set automatically eliminates duplicate link references
+    
+    for comp in recipe_data.get("components", []):
+        comp_name = comp.get("name", "Main").strip()
+        if comp_name and comp_name not in flat_components:
+            flat_components.append(comp_name)
+            
+        for ing in comp.get("ingredients", []):
+            flat_ingredients.add(ing.title().strip())
+            
+    # --- 2. ASSEMBLE CLEAN FLAT FRONTMATTER ---
     yaml_lines = [
         "---",
         "type: recipe",
@@ -166,22 +205,40 @@ def save_to_obsidian(video_id, recipe_data):
         f'time_minutes: {recipe_data.get("time_minutes", 0)}',
         "components:"
     ]
+    for comp_name in flat_components:
+        yaml_lines.append(f'  - "{comp_name}"')
+        
+    yaml_lines.append("ingredients:")
+    for ing_name in sorted(flat_ingredients):
+        yaml_lines.append(f'  - "[[{ing_name}]]"')
+        
+    yaml_lines.append("---\n")
+    
+    # --- 3. ASSEMBLE CONTENT BODY ---
+    body_lines = [
+        f"# {title}",
+        f"\n[Watch Source Video](https://youtube.com/watch?v={video_id})\n",
+        "## 📋 Ingredients"
+    ]
     
     for comp in recipe_data.get("components", []):
-        yaml_lines.append(f'  - name: "{comp.get("name", "Main")}"')
-        yaml_lines.append(f'    ingredients:')
-        for ing in comp.get("ingredients", []):
-            yaml_lines.append(f'      - "[[{ing.title()}]]"')
+        body_lines.append(f"### {comp.get('name', 'Main')}")
+        for text_line in comp.get("ingredients_with_amounts", []):
+            linked_line = text_line
+            for ing in comp.get("ingredients", []):
+                # Auto-wrap the key terms in the visual list items too
+                linked_line = re.sub(f"(?i)({re.escape(ing)})", r"[[\1]]", linked_line)
+            body_lines.append(f"- {linked_line}")
             
-    yaml_lines.append("---")
-    yaml_lines.append(f"\n# {title}")
-    yaml_lines.append(f"\n[Watch Source Video](https://youtube.com/watch?v={video_id})")
-    
-    logger.debug(f"Writing file out to disk using UTF-8 encoding scheme...")
-    with open(filepath, "w", encoding="utf-8") as f:
-        f.write("\n".join(yaml_lines))
+    body_lines.append("\n## 🍳 Instructions")
+    for idx, step in enumerate(recipe_data.get("instructions", []), start=1):
+        body_lines.append(f"{idx}. {step}")
         
-    logger.info(f"Saved custom Markdown page to Obsidian Vault: '{filename}'")
+    # --- 4. WRITE OUT FILE ---
+    with open(filepath, "w", encoding="utf-8") as f:
+        f.write("\n".join(yaml_lines + body_lines))
+        
+    logger.info(f"Successfully wrote flat-property Obsidian note: '{filename}'")
 
 # ==========================================
 # 5. PIPELINE EXECUTION
@@ -237,7 +294,7 @@ def main():
             cursor.execute("SELECT video_id FROM processed_videos WHERE video_id = ?", (video_id,))
             if cursor.fetchone():
                 logger.info(f"Video {video_id} found in database. This task is a duplicate. Instructing Todoist to close task.")
-                todoist.move_task(task.id)
+                todoist.close_task(task_id=task.id)
                 continue
                 
             # Step C: Scraping Text
